@@ -1,0 +1,62 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Management Employee
+  <span class="fill-remaining-space"></span>
+  <button mat-button routerLink="/login" style="color: white;">Logout</button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <img
+      class="avatar mat-elevation-z8"
+      src="assets/photo/photo.jpg" 
+    />
+
+    <h4 class="name">Negru Ciprian-Florin </h4>
+    <p class="designation">Mathematics-Informatics Teacher</p>
+
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" routerLink="/home" style="color: white;">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+
+    <button mat-button class="menu-button" routerLink="" style="color: white;">
+      <mat-icon>person</mat-icon>
+      <span>Employee</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/about" style="color: white;">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/help" style="color: white;">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <div class="content mat-elevation-z8" style="background-color: green;">
+      <router-outlet></router-outlet>
+    </div>
+    <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #e51017;">
+      © 2023 Negru Ciprian - Florin All rights reserved.
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+  
+
+
+
+
+
